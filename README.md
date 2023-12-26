@@ -9,47 +9,47 @@ By systematically extracting and cleaning these reviews, we aimed to uncover val
 The dataset, consisting of 5500 rows and 19 columns, holds crucial information
 about various products, their ratings, reviews, and additional details.
 The dataset includes the following variables:
-● product: Name of the product
-● ratingCount: Total number of ratings or reviews
-● aveRating: Average rating based on user reviews
-● numRating1-numRating5: Ratings ranging from 1 to 5 eggs
-● currentPrice: Current price of the product
-● revname: Name of the reviewer
-● ownership: Duration the seller owned the product
-● rev_verified: Binary variable indicating if the review is verified
-● revdate: Date of the review
-● revstars: Rating given by the reviewer in stars
-● revtext: Text of the review
-● revhelp: Number of users who found the review helpful
-● qa: Number of questions and answers related to the product
-● manufresponse: Binary variable indicating if the manufacturer responded
-● id: Identifier for the product or review
+1. product: Name of the product
+2. ratingCount: Total number of ratings or reviews
+3. aveRating: Average rating based on user reviews
+4. numRating1-numRating5: Ratings ranging from 1 to 5 eggs
+5. currentPrice: Current price of the product
+6. revname: Name of the reviewer
+7. ownership: Duration the seller owned the product
+8. rev_verified: Binary variable indicating if the review is verified
+9. revdate: Date of the review
+10. revstars: Rating given by the reviewer in stars
+11. revtext: Text of the review
+12. revhelp: Number of users who found the review helpful
+13. qa: Number of questions and answers related to the product
+14. manufresponse: Binary variable indicating if the manufacturer responded
+15. id: Identifier for the product 
 
 ### Steps taken to clean the data
 Every column in this dataset has been cleaned individually to ensure that all the variables we deal with for our convenience are numeric (except product). The cleaning was performed using Python libraries - NumPy and Pandas. NumPy is a powerful Python library for numerical computing, providing support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays. Pandas, on the other hand, is a versatile data manipulation and analysis library that simplifies working with structured data, offering data structures like DataFrame for efficient data handling and analysis in Python.
 
 Following are the documented steps that we took to clean our dataset:
-● Dropped Variables:
+1. Dropped Variables:
 - numRating1-numRating5 were dropped as they were deemed unnecessary for the analysis.
-● Renamed Variables:
+2. Renamed Variables:
 - Leading spaces in variable names were eliminated to enhance readability.
-● Cleaned currentPrice:
+3. Cleaned currentPrice:
 - Removed '$' and ',' from the string.
 - Converted the variable to float type.
-● Cleaned ratingCount:
+4. Cleaned ratingCount:
 - Followed the same approach as with currentPrice to ensure consistency
 and accuracy.
-● Cleaned revstars:
+5. Cleaned revstars:
 - Removed the non-numerical part "rating rating-" from the variable.
 - Converted the variable to an integer type, handling missing values with NaN.
-● Processed revhelp:
+6. Processed revhelp:
 - Split the variable into 'help' and 'help_total'.
 - Removed non-numeric characters from 'help' and converted it to float.
 - Filled missing values with zeros.
-● Cleaned qa:
+7. Cleaned qa:
 - Followed the same approach as with revhelp to clean qa.
 - Created and cleaned two new variables, 'quest' and 'answ'.
-● Assessment:
+8. Assessment:
 - Ran df.describe() and df.info() to assess the data after cleaning.
 
 ### Conclusion
